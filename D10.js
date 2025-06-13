@@ -599,8 +599,6 @@ const halfTree = (n) => {
   }
 };
 
-halfTree(5);
-
 /* ESERCIZIO 28
 Crea una funzione chiamata "tree" che riceve un numero come parametro e costruisce un albero di "*" (asterischi) dell'altezza fornita.
 
