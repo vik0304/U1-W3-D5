@@ -586,12 +586,12 @@ const addClass = () => {
   **
   ***
 
-*/
+  */
 
 const halfTree = (n) => {
+  let body = document.getElementsByTagName("body");
   for (let i = 1; i <= n; i++) {
     let p = document.createElement("p");
-    let body = document.getElementsByTagName("body");
     for (let x = 0; x < i; x++) {
       p.innerText += "*";
     }
@@ -599,24 +599,29 @@ const halfTree = (n) => {
   }
 };
 
+halfTree(5);
+
 /* ESERCIZIO 28
-  Crea una funzione chiamata "tree" che riceve un numero come parametro e costruisce un albero di "*" (asterischi) dell'altezza fornita.
+Crea una funzione chiamata "tree" che riceve un numero come parametro e costruisce un albero di "*" (asterischi) dell'altezza fornita.
 
-  Esempio:
-  tree(3)
+Esempio:
+tree(3)
 
-    *
-   ***
-  *****
+*
+***
+*****
 
 */
 
+// in questo caso ho appeso al body e centrato il body solo perché non avevo un sito su cui basarmi, in altri casi potrei semplicemente fissare i P ad un div predisposto per loro
+// e così non dovrei centrare l'intero body ma potrei centrare oslo l'albero
+
 const tree = (n) => {
+  let body = document.getElementsByTagName("body");
+  body[0].style.textAlign = "center";
   for (let i = 1; i <= n; i++) {
     let p = document.createElement("p");
-    let body = document.getElementsByTagName("body");
-    body[0].style.textAlign = "center";
-    for (let x = 0; x < i; x++) {
+    for (let x = 1; x < i * 2; x++) {
       p.innerText += "*";
     }
     body[0].appendChild(p);
